@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Fashion Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white; /* Light gray color */
+            overflow: hidden;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px;
+            left: 60px;
+            position: relative;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Section styles */
+        section {
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #E3CCAB; /* Light blue color */
+        }
+
+        /* Icon styles */
+        .icons {
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: -38px;
+            gap: 10px;
+            left: 0px;
+        }
+
+        .icon1,
+        .icon2,
+        .icon3,
+        .icon4 {
+            margin-right: 10px;
+            font-size: 24px;
+            position: relative;
+            height: 30px;
+            width: 30px;
+            gap: 10px;
+        }
+
+        /* Picture container styles */
+        .picture-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: -108px;
+            margin-left: 20px;
+        }
+
+        /* Picture styles */
+        .picture1 {
+            margin: 0 10px;
+            max-width: 500px;
+            height: auto;
+            position: relative;
+            left: -36px;
+            width: 356px;
+            z-index: -1;
+            top: 20px;
+        }
+
+        /* New text styles */
+        .new-text {
+            margin: 0 5px; /* Adds space between the text and the images */
+            font-weight: var(--font-weight, bold); /* Allows users to customize the font weight */
+            font-size: var(--font-size, 16px); /* Allows users to customize the font size */
+        }
+
+        /* Picture styles */
+        .picture {
+            margin: 0px 13px;
+            max-width: 512px;
+            position: relative;
+            left: -3%;
+            width: 412px;
+            height: 412px;
+            top: 10px;
+            transition: all 90s ease-out; /* Add transition property */
+            animation: fade 6s infinite alternate;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            background-color: #E3CCAB;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Image styles */
+        img {
+            margin-right: 20px;
+            position: relative;
+            left: -71px;
+            top: 20px;
+        }
+
+        .column-3 {
+            display: flex;
+            flex-direction: column;
+            line-height: normal;
+            width: 58%;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 991px) {
+            .column-3 {
+                width: 100%;
+            }
+        }
+
+        .div-17 {
+            display: flex;
+            margin-top: 180px;
+            flex-grow: 1;
+            flex-direction: column;
+            color: #000;
+        }
+
+        @media (max-width: 991px) {
+            .div-17 {
+                max-width: 100%;
+                margin-top: 40px;
+            }
+        }
+
+        .div-18 {
+            align-self: start;
+            display: flex;
+            margin-left: 30px;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        @media (max-width: 991px) {
+            .div-18 {
+                max-width: 100%;
+                flex-wrap: wrap;
+            }
+        }
+
+        .div-19 {
+            flex-grow: 1;
+            font: 600 100px Open sans, Semibold;
+        }
+
+        @media (max-width: 991px) {
+            .div-19 {
+                font-size: 40px;
+            }
+        }
+
+        .div-20 {
+            margin: auto 0;
+            font: 300 76px Open sans, Light;
+            position: relative;
+            left: 30px;
+        }
+
+        @media (max-width: 991px) {
+            .div-20 {
+                font-size: 40px;
+            }
+        }
+
+        .div-21 {
+            font: 400 160px oooh Baby;
+        }
+
+        @media (max-width: 991px) {
+            .div-21 {
+                max-width: 100%;
+                font-size: 40px;
+            }
+        }
+
+        .div-22 {
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            border: 1px solid #d9d9d9;
+            align-self: center;
+            margin-top: 51px;
+            width: 334px;
+            max-width: 100%;
+            color: #fff;
+            white-space: nowrap;
+            text-align: center;
+            padding: 5px 60px;
+            font: 500 34px Outfit, sans-serif;
+            background-color: #7689A2;
+        }
+
+        @media (max-width: 991px) {
+            .div-22 {
+                white-space: initial;
+                margin-top: 40px;
+                padding: 0 20px;
+            }
+        }
+
+        .div-23 {
+            color: #000;
+            white-space: nowrap;
+            margin: -46px 0 0 122px;
+            font: 300 55px Open Sans, sans-serif;
+            position: relative;
+            top: -40px;
+            left: -100px;
+        }
+
+        @media (max-width: 991px) {
+            .div-23 {
+                color: #000;
+                white-space: nowrap;
+                margin: 50px 0 0 0px;
+                font: 300 54px Open Sans, sans-serif;
+            }
+        }
+
+        .div-24 {
+            justify-content: center;
+            display: flex;
+            margin-left: 278px;
+            gap: 0px;
+            color: #000;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 991px) {
+            .div-24 {
+                margin-left: 10px;
+                white-space: initial;
+            }
+        }
+
+        .div-25 {
+            display: flex;
+            flex-basis: 0%;
+            flex-direction: column;
+            font-size: 30px;
+            font-weight: 700;
+            margin: auto 0;
+        }
+
+        @media (max-width: 991px) {
+            .div-25 {
+                white-space: initial;
+            }
+        }
+
+        .div-26 {
+            font-family: Open Sans, sans-serif;
+            position: relative;
+            top: -44px;
+            left: -160px;
+        }
+
+        .div-27 {
+            font-family: Open Sans, sans-serif;
+            position: relative;
+            top: -56px;
+            left: -160px;
+        }
+
+        .div-28 {
+            flex-grow: 1;
+            font: 300 58px Open Sans, sans-serif;
+            position: relative;
+            top: -40px;
+            left: -143px;
+        }
+
+        @media (max-width: 991px) {
+            .div-28 {
+                font-size: 40px;
+            }
+        }
+
+        .column-3 {
+            display: flex;
+            flex-direction: column;
+            line-height: normal;
+            text-align: center; /* Center align the content */
+            width: 100%; /* Occupy full width */
+            margin-top: 20px; /* Add margin on top */
+        }
+
+        .div-23 {
+            color: #000;
+            white-space: nowrap;
+            margin: -46px 0 0 122px;
+            font: 300 38px Open Sans, sans-serif;
+            position: relative;
+            top: -67px;
+            left: -52px;
+        }
+
+        .div-24 {
+            display: flex;
+            gap: 0px;
+            color: #000;
+            white-space: nowrap;
+            margin-top: 0px;
+        }
+
+        .div-25 {
+            display: flex;
+            flex-basis: 0%;
+            flex-direction: column;
+            font-size: 30px;
+            font-weight: 700;
+            margin: auto 0;
+        }
+
+        .image2 {
+            position: absolute;
+            left: 53px;
+            z-index: 1;
+            max-width: 478px;
+            width: 469px;
+            top: 112px;
+        }
+
+        .image3 {
+            position: absolute;
+            left: 75%;
+            z-index: 1;
+            max-width: 322px;
+            width: 450px;
+            top: 90px;
+        }
+
+        /* Button styles */
+        .icon-next {
+            cursor: pointer;
+            font-size: 43px;
+            color: #333;
+            position: relative;
+            top: 303px;
+            left: -30px;
+            height: 50px;
+            width: 45px;
+        }
+
+        /* Hover effect */
+        .icon-next:hover {
+            color: #555; /* Change color on hover */
+        }
+
+        .swapping {
+            animation: swapImages 1s ease-in-out forwards;
+        }
+
+        @keyframes swapImages {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .new-picture {
+            max-width: 390px;
+            margin-top: -500px;
+            position: relative;
+            width: 366px;
+            height: 415px;
+            left: 1106px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#party-wear">Party Wear</a></li>
+            <li><a href="#casual">Casual</a></li>
+            <li><a href="#designer">Designer</a></li>
+            <li><a href="#accessories">Accessories</a></li>
+            <li><a href="#bags">Bags</a></li>
+            <li><a href="#belts">Belts</a></li>
+        </ul>
+    </nav>
+    <img src="https://sixthavenuestore.com/cdn/shop/files/sixth.png?height=628&pad_color=fff&v=1672715216&width=1200" alt="Fashion Store Logo" width="200" height="100">
+    <div class="icons">
+        <img src="https://img.icons8.com/?size=100&id=132&format=png" alt="Search Icon" class="icon1">
+        <img src="https://img.icons8.com/?size=100&id=87&format=png" alt="Like Icon" class="icon2">
+        <img src="https://img.icons8.com/?size=100&id=9671&format=png" alt="Cart Icon" class="icon3">
+        <img src="https://img.icons8.com/?size=100&id=7820&format=png" alt="Account Icon" class="icon4">
+    </div>
+</header>
+
+<div class="picture-container">
+    <img src="https://img.hotimg.com/22124-1.png" class="image2"/>
+    <img src="https://img.hotimg.com/Ellipse-98e253f6f0c28219b1.png" alt="Description of your image" class="picture1">
+    <div class="column-3">
+        <div class="div-17">
+            <div class="div-18">
+                <!-- <div class="div-19">NEW</div> -->
+                <div class="div-20">END OF SEASON</div>
+            </div>
+            <div class="div-21">SALE</div>
+            <div class="div-22">Shop Now</div>
+            <div class="div-23">UPTO 50% OFF</div>
+        </div>
+    </div>
+    <img src="  https://img.hotimg.com/22110.png" class="image3"/>
+    <img src="https://img.hotimg.com/Ellipse-94ec377a8ddcaca11b.png" alt="Description of your image" class="picture">
+</div>
+<div>
+    <img src="https://img.hotimg.com/Ellipse-94ec377a8ddcaca11b.png" alt="Description of your image" class="new-picture">
+</div>
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+        let clicked = false;
+
+        document.body.addEventListener('click', function(event) {
+            const screenWidth = window.innerWidth;
+            const clickX = event.clientX;
+
+            if (!clicked) {
+                if (clickX < screenWidth / 2) {
+                    setTimeout(() => {
+                        window.location.href = 'w1.html'; // Replace 'next_page.html' with your desired page URL
+                    }, 100);
+                    console.log('Move to the previous slide');
+                } else {
+                const picture1 = document.querySelector('.picture1');
+                const picture = document.querySelector('.picture');
+
+                // Get the positions and dimensions of both images
+                const picture1Rect = picture1.getBoundingClientRect();
+                const pictureRect = picture.getBoundingClientRect();
+
+                // Calculate the new positions of picture1 and picture to move to the left
+                const newX1 = pictureRect.left + picture1Rect.width - 350;
+                const newX2 = picture1Rect.left - pictureRect.width - 650;
+
+                // Set the new positions
+                picture1.style.transition = 'left 1.5s, top 1.5s';
+                picture.style.transition = 'left 1.5s, top 1.5s';
+                picture1.style.left = `${newX1}px`;
+                picture.style.left = `${newX2}px`;
+
+                // Redirect to the next page after animation completion
+                setTimeout(() => {
+                    window.location.href = 'a.html'; // Replace 'next_page.html' with your desired page URL
+                }, 1200); // Adjust the delay time as needed
+
+                clicked = true;
+            }
+            } else {
+                // Restore the original positions of picture1 and picture
+                const picture1 = document.querySelector('.picture1');
+                const picture = document.querySelector('.picture');
+                picture1.style.transition = 'left 1s, top 1s';
+                picture.style.transition = 'left 1s, top 1s';
+                picture1.style.left = '';
+                picture.style.left = '';
+
+                clicked = false;
+            }
+        });
+    });
+</script>
+</body>
+</html>

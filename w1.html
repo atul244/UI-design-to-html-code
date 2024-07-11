@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+    <link rel="stylesheet" href="w1.css">
+    <style>
+        /* Reset styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: white; /* Light gray color */
+    overflow: hidden;
+
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu-item {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu-item:first-child {
+    margin-left: 50px; /* Adjust the margin as needed */
+}
+
+.icons {
+    position: absolute;
+    top: 7%;
+    right: -563px;
+    transform: translateY(-50%);
+}
+
+.icon1, .icon2, .icon3, .icon4 {
+    margin-right: 30px; /* Increase the gap between icons */
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    position: relative; /* Allows for absolute positioning */
+}
+
+
+nav ul {
+    margin-left: 50px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Picture container styles */
+.picture-container {
+    position: relative; /* Set the container to relative positioning */
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    align-items: center; /* Centers the images vertically */
+}
+
+/* Picture styles */
+.picture1 {
+    margin: 0 10px;
+    max-width: 310px;
+    top: -25px;
+    position: absolute;
+    left: 72px;
+}
+/* Picture styles */
+.picture11 {
+    max-width: 265px;
+    top: -40px;
+    position: absolute;
+    left: 102px;
+}
+/* Picture styles */
+.picture2 {
+    margin: 0 10px;
+    max-width: 388px;
+    top: -17px;
+    position: absolute;
+    left: 1158px;
+}
+
+/* Picture styles */
+.picture12 {
+    margin: 0 10px;
+    max-width: 431px;
+    top: -19px;
+    position: absolute;
+    left: 1115px;
+}
+
+.NEW-text {
+    position: absolute;
+    left: 430px;
+    top: 268px;
+    font-weight: 650;
+    font-size: var(--font-size, 100px);
+    font-family: Open sans ( Semibold );
+}
+
+.STYLE {
+    position: absolute;
+    left: 701px;
+    top: 284px;
+    font-weight: 50;
+    font-size: var(--font-size, 80px);
+    font-family: Open sans ( Semibold );
+}
+.Collection {
+    position: absolute;
+    left: 473px;
+    top: 357px;
+    font-weight: 500;
+    font-size: var(--font-size, 170px);
+    font-family: oooh Baby;
+}
+
+.Shop-Now {
+    position: absolute;
+    left: 709px;
+    top: 558px;
+    font-weight: 500;
+    font-size: var(--font-size, 50px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.Season-of-sale {
+    position: absolute;
+    left: 108px;
+    top: 540px;
+    font-weight: 400;
+    font-size: var(--font-size, 50px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.UP {
+    position: absolute;
+    left: 145px;
+    top: 606px;
+    font-weight: 700;
+    font-size: var(--font-size, 34px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.TO {
+    position: absolute;
+    left: 145px;
+    top: 642px;
+    font-weight: 700;
+    font-size: var(--font-size, 34px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.fifty-percent {
+    position: absolute;
+    left: 205px;
+    top: 598px;
+    font-weight: 400;
+    font-size: var(--font-size, 70px);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #EBCCCE;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Image styles */
+img {
+    margin-right: 20px;
+    position: relative;
+    left: -568px;
+}
+
+.swapping {
+    animation: swapImages 1s ease-in-out forwards;
+}
+
+@keyframes swapImages {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="menu-item"><a href="#party-wear">Party Wear</a></li>
+                <li class="menu-item"><a href="#casual">Casual</a></li>
+                <li class="menu-item"><a href="#designer">Designer</a></li>
+                <li class="menu-item"><a href="#accessories">Accessories</a></li>
+                <li class="menu-item"><a href="#bags">Bags</a></li>
+                <li class="menu-item"><a href="#belts">Belts</a></li>
+            </ul>
+        </nav>
+        <img src="https://sixthavenuestore.com/cdn/shop/files/sixth.png?height=628&pad_color=fff&v=1672715216&width=1200" alt="Fashion Store Logo" width="200" height="100">
+        <div class="icons">
+            <img src="https://img.icons8.com/?size=50&id=132&format=png" alt="Search Icon" class="icon1">
+            <img src="https://img.icons8.com/?size=50&id=581&format=png" alt="Like Icon" class="icon2">
+            <img src="https://img.icons8.com/?size=50&id=9671&format=png" alt="Cart Icon" class="icon3">
+            <img src="https://img.icons8.com/?size=50&id=7820&format=png" alt="Account Icon" class="icon4">
+        </div>
+    </header>
+    
+    <div class="picture-container">
+        <img src="https://img.hotimg.com/Ellipse-94ec377a8ddcaca11b.png" alt="Description of your image" class="picture1 active">
+        <img src="https://img.hotimg.com/custom_resized_5275107d-454c-4f62-beb7-6790f91d7c58-1.png" alt="Description of your image" class="picture11 inactive">
+        <img src="https://img.hotimg.com/Ellipse-98e253f6f0c28219b1.png" alt="Description of your image" class="picture2 inactive">
+        <img src="https://img.hotimg.com/custom_resized_3129a88f-3dbe-4910-842d-945c87fceed2-1.png" alt="Description of your image" class="picture12 inactive">
+    </div>
+    <span class="NEW-text">NEW</span>
+    <span class="STYLE">STYLE</span>
+    <span class="Collection">Collection</span>
+    <span class="Shop-Now">Shop Now</span>
+    <span class="Season-of-sale">Season of sale</span>
+    <span class="UP">UP</span>
+    <span class="TO">TO</span>
+    <span class="fifty-percent">50%</span>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let clicked = false;
+    
+            document.body.addEventListener('click', function(event) {
+                const screenWidth = window.innerWidth;
+                const clickX = event.clientX;
+    
+                if (!clicked) {
+                    if (clickX < screenWidth / 2) {
+                        setTimeout(() => {
+                            window.location.href = 'a.html'; // Replace 'next_page.html' with your desired page URL
+                        }, 100);
+                        console.log('Move to the previous slide');
+                    } else {
+                        const picture1 = document.querySelector('.picture1');
+                        const picture2 = document.querySelector('.picture2');
+                        const picture11 = document.querySelector('.picture11');
+    
+                        // Get the positions and dimensions of all images
+                        const picture1Rect = picture1.getBoundingClientRect();
+                        const picture2Rect = picture2.getBoundingClientRect();
+                        const picture11Rect = picture11.getBoundingClientRect();
+    
+                        // Calculate the new positions of 1.png and 2.png to ensure no overlap
+                        const newX1 = 1120;
+                        const newX2 = 50; // Adjust the position of 2.png to be behind 11.png
+                        const newX11 = picture11Rect.left; // Ensure 11.png stays in its original position
+    
+                        // Set the new positions
+                        picture1.style.transition = 'left 1.5s, top 1.5s';
+                        picture2.style.transition = 'left 1.5s, top 1.5s';
+                        picture1.style.left = `${newX1}px`;
+                        picture2.style.left = `${newX2}px`; // Set the new position of 2.png
+                        picture11.style.left = `${newX11}px`; // Ensure 11.png stays in its original position
+    
+                        // Set z-index to ensure 2.png is behind 11.png
+                        picture2.style.zIndex = '0'; // Set a lower z-index for 2.png
+                        picture11.style.zIndex = '1'; // Set a higher z-index for 11.png
+    
+                        setTimeout(() => {
+                            window.location.href = 'b.html'; // Replace 'next_page.html' with your desired page URL
+                        }, 1200); // Adjust the delay time as needed
+    
+                        clicked = true;
+                    }
+                } else {
+                    // Restore the original positions of 1.png and 2.png
+                    const picture1 = document.querySelector('.picture1');
+                    const picture2 = document.querySelector('.picture2');
+                    const picture11 = document.querySelector('.picture11');
+                    picture1.style.transition = 'left 1s, top 1s';
+                    picture2.style.transition = 'left 1s, top 1s';
+                    picture11.style.transition = 'left 1s, top 1s';
+                    picture1.style.left = '';
+                    picture2.style.left = '';
+                    picture11.style.left = '';
+    
+                    // Reset z-index
+                    picture2.style.zIndex = ''; // Reset z-index for 2.png
+                    picture11.style.zIndex = ''; // Reset z-index for 11.png
+    
+                    clicked = false;
+                }
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
